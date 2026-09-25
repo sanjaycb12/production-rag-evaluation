@@ -1,0 +1,22 @@
+[
+    {
+        "id": "q01",
+        "question": "What are the five AI projects recommended in the document?"
+    },
+    {
+        "id": "q02",
+        "question": "What technologies are listed for the Production RAG + Evaluation Layer project?"
+    },
+    {
+        "id": "q03",
+        "question": "What does the document say recruiters look for when evaluating AI projects?"
+    },
+    {
+        "id": "q04",
+        "question": "What is the architecture of the multimodal AI project?"
+    },
+    {
+        "id": "q05",
+        "question": "What evaluation approach is described for the Production RAG project?"
+    }
+]
