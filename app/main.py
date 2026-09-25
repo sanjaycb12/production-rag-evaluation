@@ -3,9 +3,7 @@ from retrieval.hybrid_retriever import HybridRetriever
 
 retriever = HybridRetriever()
 
-
 query = "What projects are recommended?"
-
 
 results = retriever.search(
     query,
@@ -14,42 +12,44 @@ results = retriever.search(
 
 
 print("\n==============================")
-print("DENSE RETRIEVAL")
+print("RERANKED RESULTS")
 print("==============================")
 
 
 for index, result in enumerate(
-    results["dense"],
+    results,
     start=1
 ):
 
     print(f"\nRESULT {index}")
 
-    print("Score:", result["score"])
-    print("Source:", result["source"])
-    print("Page:", result["page"])
-    print("Chunk:", result["chunk"])
+    print(
+        "Rerank score:",
+        result["rerank_score"]
+    )
 
-    print("Text:")
-    print(result["text"][:300])
+    print(
+        "RRF score:",
+        result.get("rrf_score")
+    )
 
+    print(
+        "Source:",
+        result["source"]
+    )
 
-print("\n==============================")
-print("BM25 RETRIEVAL")
-print("==============================")
+    print(
+        "Page:",
+        result["page"]
+    )
 
+    print(
+        "Chunk:",
+        result["chunk"]
+    )
 
-for index, result in enumerate(
-    results["bm25"],
-    start=1
-):
+    print("\nText:")
 
-    print(f"\nRESULT {index}")
-
-    print("Score:", result["score"])
-    print("Source:", result["source"])
-    print("Page:", result["page"])
-    print("Chunk:", result["chunk"])
-
-    print("Text:")
-    print(result["text"][:300])
+    print(
+        result["text"][:500]
+    )
